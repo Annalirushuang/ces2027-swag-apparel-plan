@@ -735,6 +735,127 @@ button:focus-visible{outline:3px solid #8195ff;outline-offset:3px}
 }
 #panel-ces-apparel .cardigan-item>.cardigan-gallery{grid-area:gallery!important}
 #panel-ces-apparel .cardigan-item>.apparel-info{grid-area:info!important}</style>
+
+<style id="responsive-site-v2026">
+/* Site-wide responsive polish (mobile / tablet) */
+html{overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{overflow-x:clip;max-width:100vw}
+.page{overflow-x:hidden;min-width:0}
+
+.table-wrap,.logistics-table-wrap,.timeline-table-column{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  max-width:100%;
+  overscroll-behavior-x:contain;
+}
+
+@media(max-width:900px){
+  #panel-beijing .table-wrap table{min-width:720px}
+  .product{min-width:0;align-items:flex-start}
+  .product img{width:80px;height:52px;flex-shrink:0}
+  .product small{max-width:100%}
+  .comment{min-width:0;white-space:normal}
+  .section-head{align-items:flex-start!important;flex-direction:column!important;gap:10px!important}
+  .section-head .tag{align-self:flex-start;white-space:normal;line-height:1.35;text-align:left}
+  .section-head h2{font-size:clamp(19px,4.8vw,24px)!important;line-height:1.22}
+  .page-tabs{
+    position:sticky;top:0;z-index:40;
+    padding:10px max(12px,env(safe-area-inset-right)) 8px max(12px,env(safe-area-inset-left))!important;
+    -webkit-overflow-scrolling:touch;
+    scroll-padding-inline:12px;
+    gap:6px!important;
+  }
+  .page-tab{
+    flex:0 0 auto;
+    min-height:46px;
+    padding:11px 14px!important;
+    font-size:12px!important;
+    line-height:1.25;
+    max-width:min(42vw,220px);
+    white-space:normal;
+    text-align:center;
+  }
+  .concept-row{
+    grid-template-columns:minmax(0,1fr)!important;
+    align-items:start!important;
+  }
+  .concept-row .concept-img,
+  .concept-row .concept-img.portrait{
+    grid-column:1/-1;
+    width:100%;
+    max-width:min(220px,72vw);
+    margin:0 auto;
+    justify-self:center;
+  }
+  .concept-row .concept-copy,
+  .concept-row .field,
+  .concept-row .comment{grid-column:1/-1!important}
+  .concept-09-row .concept-img.portrait,
+  .concept-10-row .concept-img.portrait{transform:none!important}
+  .concept-detail-image{
+    max-width:100%!important;
+    width:100%!important;
+    height:auto!important;
+    max-height:min(42vw,200px)!important;
+    object-fit:contain!important;
+  }
+  #panel-ces-apparel .apparel-item,
+  #panel-ces-apparel .apparel-item.hoodie-item,
+  #panel-ces-apparel .cardigan-item{
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+  }
+  #panel-ces-apparel .cardigan-gallery{max-width:100%!important;width:100%!important}
+  #panel-ces-apparel .polo-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .logistics-block{padding:16px!important}
+  .footer{flex-direction:column;align-items:flex-start;gap:10px;text-align:left}
+}
+
+@media(max-width:640px){
+  .hero{padding:24px max(16px,env(safe-area-inset-left)) 22px max(16px,env(safe-area-inset-right))!important}
+  .hero:before{opacity:.35;font-size:clamp(28px,12vw,46px)!important;right:8px!important;bottom:4px!important}
+  h1{font-size:clamp(26px,7.5vw,34px)!important;line-height:1.08!important}
+  .language-toggle{position:relative!important;top:auto!important;right:auto!important;margin:0 0 10px!important}
+  .hero-topline{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:16px!important}
+  .event-meta{width:100%}
+  .event-meta-date,.event-meta-location{font-size:10px!important;letter-spacing:.8px!important}
+  .tab-panel{padding-left:max(10px,env(safe-area-inset-left))!important;padding-right:max(10px,env(safe-area-inset-right))!important}
+  .page-tab{
+    min-height:42px;
+    padding:9px 11px!important;
+    font-size:11px!important;
+    border-radius:10px 10px 0 0!important;
+    max-width:46vw;
+  }
+  #panel-ces-apparel .apparel-fields,
+  #panel-ces-apparel .apparel-fields{
+    grid-template-columns:1fr!important;
+  }
+  #panel-ces-apparel .polo-gallery{grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .apparel-fields .field:nth-child(2) strong{white-space:normal}
+  .lead-time-highlight{white-space:normal!important;display:inline}
+  .concept-group-chip{margin-left:0!important;align-self:flex-start}
+  .concept-group-heading .concept-group-chip{margin-left:51px}
+  .battery-shipping-note{flex-direction:column;gap:10px}
+  .uniform-polo-gallery,.uniform-jacket-gallery{grid-template-columns:1fr 1fr!important}
+  #panel-uniform-selection .uniform-form-grid{grid-template-columns:1fr!important}
+  .image-lightbox{padding:48px 12px!important}
+  .image-lightbox .lightbox-count{font-size:11px;padding:6px 10px;max-width:90vw;text-align:center}
+}
+
+@media(max-width:480px){
+  .page-tab{max-width:100%;flex:1 1 calc(50% - 4px);min-width:calc(50% - 4px)}
+  .page-tabs{flex-wrap:wrap;overflow-x:visible;justify-content:flex-start}
+  .calendar-legend{grid-template-columns:1fr!important}
+  .overview-grid{gap:0}
+  .product img{width:64px;height:42px}
+}
+
+@media(max-width:900px) and (pointer:coarse){
+  .page-tab,.language-toggle button,button.page-tab{min-height:44px}
+  .product img,.concept-img img,.tab-panel img{cursor:zoom-in}
+}
+</style>
 </head><body><div class="page"><header class="hero"><div aria-label="Language switch" class="language-toggle"><button class="active" data-lang="en" type="button">EN</button><button data-lang="zh" type="button">中文</button></div><div class="hero-topline"><span class="kicker">TELENAV · CES 2027</span></div><h1>Swag &amp; Apparel Plan</h1><div aria-label="CES 2027 event details" class="event-meta"><span class="event-meta-date">January 6–9, 2027</span><span class="event-meta-location">Las Vegas, NV</span></div><div aria-label="Planning overview" class="hero-discussion-list">
 <div class="hero-discussion-item"><span class="hero-discussion-number">01</span><div><strong>Purpose</strong><p>Review swag and apparel options for CES 2027.</p></div></div>
 <div class="hero-discussion-item"><span class="hero-discussion-number">02</span><div><strong>Budget Status</strong><p>Preliminary pricing is available; shipping costs and several supplier quotes remain pending.</p></div></div>
@@ -1195,23 +1316,62 @@ document.querySelectorAll('.page-tab').forEach(function(button){button.addEventL
   button.addEventListener('click', function() { applyLanguage(lang === 'en' ? 'zh' : 'en'); });
 })();
 </script>
+<script id="uniform-submit-config">
+window.CES_UNIFORM_SUBMIT = {
+  url: "https://script.google.com/macros/s/AKfycbyZCX6yCgl6UZdpg-SB1Pf_q30mthvDTPK1SXA9_pJa14AHEE328H1j-X8vwq01pWXwjVA/exec",
+  secret: ""
+};
+</script>
 <script id="uniform-selection-script">
 (function(){
   const name=document.getElementById('uniformName'), polo=document.getElementById('uniformPolo'), jacket=document.getElementById('uniformJacket'), summary=document.getElementById('uniformSummary'), status=document.getElementById('uniformStatus'), submit=document.getElementById('uniformSubmit');
   if(!name||!polo||!jacket||!summary||!submit)return;
   function currentLang(){ return document.documentElement.lang === 'zh-CN' ? 'zh' : 'en'; }
+  function cfg(){ return window.CES_UNIFORM_SUBMIT || { url: '', secret: '' }; }
   function update(){
     const zh=currentLang()==='zh';
     summary.innerHTML='<strong>'+(zh?'我的选择':'Your Selection')+'</strong><br>'+(zh?'姓名':'Name')+': '+(name.value||'—')+'<br>'+(zh?'长袖 Polo 衫':'Long Sleeve Polo')+': '+(polo.value||'—')+'<br>'+(zh?'拉链外套':'Zip-Up Jacket')+': '+(jacket.value||'—');
-    status.textContent='';
+    if(!status.dataset.locked) status.textContent='';
   }
   [name,polo,jacket].forEach(el=>el.addEventListener('change',update));
   submit.addEventListener('click',function(){
     const zh=currentLang()==='zh';
-    if(!name.value||!polo.value||!jacket.value){status.textContent=zh?'请完成所有选择。':'Please complete all selections.';return;}
-    const data={name:name.value,longSleevePoloSize:polo.value,jacketSize:jacket.value,submittedAt:new Date().toISOString()};
-    localStorage.setItem('ces2027UniformSelection_'+name.value,JSON.stringify(data));
-    status.textContent=zh?'✓ 你的选择已保存在当前设备。':'✓ Your selection has been saved on this device.';
+    if(!name.value||!polo.value||!jacket.value){
+      status.dataset.locked='';
+      status.textContent=zh?'请完成所有选择。':'Please complete all selections.';
+      return;
+    }
+    const endpoint=(cfg().url||'').trim();
+    if(!endpoint){
+      status.dataset.locked='';
+      status.textContent=zh?'团队提交尚未配置。请联系负责人设置 Google Sheet 链接。':'Team submission is not configured yet. Ask the organizer to connect Google Sheets.';
+      return;
+    }
+    const data={
+      name:name.value,
+      longSleevePoloSize:polo.value,
+      jacketSize:jacket.value,
+      submittedAt:new Date().toISOString(),
+      source:'ces2027-swag-plan'
+    };
+    if((cfg().secret||'').trim()) data.secret=cfg().secret.trim();
+    status.dataset.locked='1';
+    submit.disabled=true;
+    status.textContent=zh?'提交中…':'Submitting…';
+    fetch(endpoint,{
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(data)
+    }).then(function(res){ return res.json(); }).then(function(result){
+      if(!result||!result.ok) throw new Error((result&&result.error)||'submit failed');
+      try{ localStorage.setItem('ces2027UniformSelection_'+name.value,JSON.stringify(data)); }catch(e){}
+      status.textContent=result.updated
+        ? (zh?'✓ 已更新你的尺码（已写入统计表）。':'✓ Your sizes were updated in the team spreadsheet.')
+        : (zh?'✓ 已提交（已写入统计表）。':'✓ Submitted — saved to the team spreadsheet.');
+    }).catch(function(){
+      status.textContent=zh?'提交失败，请检查网络或联系负责人。':'Submission failed. Check your connection or contact the organizer.';
+      status.dataset.locked='';
+    }).finally(function(){ submit.disabled=false; });
   });
   document.addEventListener('languagechange',update);
   update();
