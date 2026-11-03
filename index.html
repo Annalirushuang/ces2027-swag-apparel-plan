@@ -1362,12 +1362,13 @@ window.CES_UNIFORM_SUBMIT = {
       method:'POST',
       headers:{'Content-Type':'text/plain;charset=utf-8'},
       body:JSON.stringify(data)
-    }).then(function(res){ return res.text().then(function(t){ try{ return JSON.parse(t); }catch(e){ throw new Error('NOT_JSON'); }); }).then(function(result){
+    }).then(function(res){ return res.text().then(function(t){ try{ return JSON.parse(t); }catch(e){ throw new Error('NOT_JSON'); } }).then(function(result){
       if(!result||!result.ok) throw new Error((result&&result.error)||'submit failed');
       try{ localStorage.setItem('ces2027UniformSelection_'+name.value,JSON.stringify(data)); }catch(e){}
       status.textContent=result.updated
         ? (zh?'✓ 已更新你的尺码（已写入统计表）。':'✓ Your sizes were updated in the team spreadsheet.')
         : (zh?'✓ 已提交（已写入统计表）。':'✓ Submitted — saved to the team spreadsheet.');
+    });
     }).catch(function(err){
       var msg;
       if(err&&err.message==='NOT_JSON') msg=zh?'提交失败：Google 脚本未对公众开放。请在 Apps Script → Deploy → 管理部署 → 访问权限选 Anyone（任何人），无痕打开 /exec 应看到 JSON。':'Submission failed: set Web app access to Anyone (not Google-account only). Opening /exec in incognito should show JSON.';
